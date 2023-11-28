@@ -1,7 +1,79 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito|Nunito+Sans&display=swap");
+
 body {
-    background: #eff1f4ff;
+  background: #eff1f4ff;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 #son-navbar {
+  background-color: #37808D;
+  box-shadow: 0px 5px 2px rgba(164, 164, 164, 0.2);
+  padding: 0px;
+}
+
+#son-navbar-title {
+  color: white;
+  justify-content: none;
+}
+
+#navbar-search {
+  padding-left: 4%;
+}
+
+#navbar-profile {
+  border-radius: 50%;
+  width: 8%;
+}
+
+#sidebar-wrapper{
+    min-height: 100vh;
+    margin-left: -18rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
     background-color: #135763;
+}
+
+#sidebar-wrapper .list-group{
+    width: 12rem;
+}
+
+#sidebar-wrapper .list-group-item{
+    background-color: #135763;
+    color: #fff;
+    border: none;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 5%;
+    padding-left: 10%;
+}
+
+#sidebar-wrapper .list-group-item:hover{
+    background-color: #262e39f0;
+    color: #fff;
+}
+
+
+#page-content-wrapper{
+    min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper{
+    margin-left: 0;
+}
+
+/* SE EU ESTIVER EM UMA TELA GRANDE */
+@media(min-width: 768px){
+    #page-content-wrapper{
+        min-width: 0;
+        width: 100%;
+    }
+
+    #sidebar-wrapper{
+        margin-left: 0;
+    }
+
+    #wrapper.toggled #sidebar-wrapper{
+        margin-left: -12rem;
+    }
 }

@@ -3,34 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link type="text/css" media="all" href="src/main/resources/static/css/navbar.css" th:href="@{src/main/resources/static/css/navbar.css}" rel="stylesheet">
     <!-- BOOTSTRAP 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-    <!-- CSS -->
-    <!-- <link rel="stylesheet" href="../static/css/reset.css"> -->
-    <link rel="stylesheet" href="./../static/css/navbar.css">
+    
     <title>SEFAZ - GCC</title>
 </head>
 
+<style>
+@import url('https://fonts.googleapis.com/css?family=Nunito|Nunito+Sans&display=swap');
 
+body {
+  background: #eff1f4ff;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+#son-navbar {
+  background-color: #37808D;
+  box-shadow: 0px 5px 2px rgba(164, 164, 164, 0.2);
+  padding: 0px;
+}
+
+#son-navbar-title {
+  color: white;
+  justify-content: none;
+}
+
+#navbar-search {
+  padding-left: 4%;
+}
+
+#navbar-profile {
+  border-radius: 50%;
+  width: 8%;
+}
+
+#sidebar-wrapper{
+    min-height: 100vh;
+    margin-left: -18rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+    background-color: #135763;
+}
+
+#sidebar-wrapper .list-group{
+    width: 12rem;
+}
+
+#sidebar-wrapper .list-group-item{
+    background-color: #135763;
+    color: #fff;
+    border: none;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 5%;
+    padding-left: 10%;
+}
+
+#sidebar-wrapper .list-group-item:hover{
+    background-color: #262e39f0;
+    color: #fff;
+}
+
+
+#page-content-wrapper{
+    min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper{
+    margin-left: 0;
+}
+
+/* SE EU ESTIVER EM UMA TELA GRANDE */
+@media(min-width: 768px){
+    #page-content-wrapper{
+        min-width: 0;
+        width: 100%;
+    }
+
+    #sidebar-wrapper{
+        margin-left: 0;
+    }
+
+    #wrapper.toggled #sidebar-wrapper{
+        margin-left: -12rem;
+    }
+}
+</style>
 
 <body>
-    <header>
-        <nav class="navbar bg-body-tertiary" id="son-navbar">
-            <div class="container-fluid">
-              <a class="navbar-brand fw-bold">SEFAZ - Gerenciamento de Cadastro do Contribuinte</a>
-              <form class="d-flex" role="search">
-                <div class="input-group me-2">
-                    <input class="form-control" type="search" placeholder="Pesquisar" aria-label="Search">
-                    <i class="bi bi-search input-group-text"></i>
-                </div>
-              </form>
-            </div>
-          </nav>
-    </header>
-    
+  <header>
+  <div class="d-flex" id="wrapper">
 
-    <!-- JAVASCRIPT -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- SIDEBAR-->
+    <div id="sidebar-wrapper">
+      <div class="sidebar-heading">
+        <img class="w-75 my-3 ms-3 " src="./governo-am-branco-x.png" alt="">
+      </div>
+      <div class="list-group list-group-flush border-right">
+        <a href="#" class="list-group-item list-group-item-action">Home</a>
+        <a href="#" class="list-group-item list-group-item-action">Acesso</a>
+        <a href="#" class="list-group-item list-group-item-action">Tabelas</a>
+        <a href="#" class="list-group-item list-group-item-action">Solicitações</a>
+        <a href="#" class="list-group-item list-group-item-action">Consultas</a>
+        <a href="#" class="list-group-item list-group-item-action">Gestão</a>
+        <a href="#" class="list-group-item list-group-item-action">Produtor Rural</a>
+        <a href="#" class="list-group-item list-group-item-action">Serviços Gerais</a>
+        <a href="#" class="list-group-item list-group-item-action">SUAD</a>
+        <a href="#" class="list-group-item list-group-item-action">SCEA</a>
+        <a href="#" class="list-group-item list-group-item-action">Técnico</a>
+      </div>   
+    </div>
+
+  <!-- NAVBAR -->
+  <div id="page-content-wrapper">
+    <nav class="navbar navbar-expand-lg" id="son-navbar">
+      <div class="container-fluid" id="">
+
+        <span class="navbar-text ms-3" id="son-navbar-title">
+          <p class="display-6 fw-bold mb-0">SEFAZ</p>
+          <p class="d6 fw-medium mb-0">GERENCIAMENTO DE CADASTRO DO CONTRIBUINTE - GCC</p>
+        </span>
+
+        <div class="float-end" id="son-navbar-collapse">
+          <form class="d-flex float-end" role="search" id="navbar-search">
+            <div class="input-group ">
+              <input class="form-control" type="search" placeholder="Pesquisar" aria-label="Search">
+              <i class="bi bi-search input-group-text"></i>
+            </div>
+            <img class="mx-3" src="https://github.com/otthonleao.png" id="navbar-profile" alt="">
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+  
+  </div>
+</header>
+
+<main>
+  <h1>Gráfica</h1>
+</main>
+
+  <!-- JAVASCRIPT -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
